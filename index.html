@@ -6,16 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <style>
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px); 
-        transition: opacity 2s ease-out, transform 2s ease-out;
-      }
-
-      .animate-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
 
       .gloria-hallelujah-regular {
         font-family: "Gloria Hallelujah", cursive;
@@ -212,6 +202,9 @@
         text-decoration-style: wavy;
       } 
 
+      .timeline-content a {
+  color: #fff !important;
+}
       .timeline-heading {
         font-family: "Gloria Hallelujah", cursive;
         font-size: 30px;
@@ -225,23 +218,26 @@
 
       .timeline-section {
         background-color: #9A7B6C;
-        padding: 50px 20px;
+        padding: 50px 0px;
         font-family: "Gaegu", sans-serif;
         color: #ffffff;
-        margin-right: 20px;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
       }
 
       .timeline {
         position: relative;
         max-width: 600px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
         padding-left: 30px;
         border-left: 3px dashed #d5b495; 
+        width: 100%;
       }
 
-      .timeline-content a {
-      color: #fff !important;
-      }
       .timeline-item {
         position: relative;
       margin-bottom: 40px;
@@ -291,24 +287,37 @@
 }
       #gallery {
         background-color: #4A3931;
+        width: 100%;
+        padding: 40px 20px;
+        font-family: "Gloria Hallelujah", cursive;
+        text-align: center;
       }
       
+      #gallery,
+.infinite-carousel,
+.carousel-container,
+.carousel-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
       #gallery .heading {
   font-family: "Gloria Hallelujah", cursive;
   font-size: 30px;
   text-align: center;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-decoration: underline;
   text-decoration-style: wavy;
   position: sticky;
-  top: 0;
-  background: #4A3931;
-  z-index: 2;
-  padding: 20px 0 10px 0;
-  margin-bottom: 0;
 }
 
+.carousel-wrapper {
+  position: relative;
+  width: 100vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .carousel-track::-webkit-scrollbar {
   display: none;
 }
@@ -328,35 +337,38 @@
       .carousel-track {
         display: flex;
   width: max-content;
-  gap: 30px;
+  gap: 40px;
   padding: 20px;
   -webkit-overflow-scrolling: touch;
   height: 320px;
-  align-items: center;
       }
 
-      .carousel-track img,
       .carousel-slide img {
   max-width: 100%;
-  max-height: 280px;
+  max-height: 500px;
   width: auto;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 
+     .carousel-track img,
+.carousel-slide:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-track img:hover,
+.carousel-slide:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
       .carousel-slide {
         flex: 0 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  max-width: 500px;
-  max-height: 300px;
       }
 
   .contact-section {
@@ -365,7 +377,10 @@
   padding: 60px 20px;
   font-family: "Gaegu", sans-serif;
   color: #fffaf0;
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
+
 
 .contact-heading {
   color: #ffffff;
@@ -375,6 +390,8 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 .contact-text {
@@ -523,8 +540,9 @@
           </div>
           </div>
         </section>
-      <section id="gallery" class="infinite-carousel">
-  <h1 class="heading">gallery</h1>    
+  <section id="gallery" class="infinite-carousel">
+  <h1 class="heading">gallery</h1>   
+  <div class="carousel-wrapper">
   <div class="carousel-track">
     <img src="https://live.staticflickr.com/65535/54665349884_88c49f5b2a_b.jpg" alt="photoshoot" class="carousel-slide">
     <img src="https://live.staticflickr.com/65535/54664288047_5ff162079b_b.jpg" alt="coffee's 4th birthday'" class="carousel-slide">
@@ -534,65 +552,46 @@
     <img src="https://live.staticflickr.com/65535/54665351768_ea0962a5f5_b.jpg" alt=" woody photoshoot" class="carousel-slide">
     <img src="https://live.staticflickr.com/65535/54665351538_f6d47d653c_b.jpg" alt="coffee photoshoot" class="carousel-slide">
   </div>
+  </div>
 </section>
-      <script>
-const track = document.querySelector('.carousel-track');
-const speed = 0.5; // pixels per frame
+<script>
+    const track = document.querySelector(".carousel-track");
+let lastScrollLeft = track.scrollLeft;
 
-const slides = Array.from(track.children);
-const originalSlidesCount = slides.length;
+track.addEventListener("scroll", () => {
+  const currentScroll = track.scrollLeft;
+  const maxScroll = track.scrollWidth - track.clientWidth;
 
-// Wait for all images to load before cloning and starting animation
-const images = slides.map(slide => slide);
-let loaded = 0;
+  // Scroll direction
+  const scrollingRight = currentScroll > lastScrollLeft;
+  const scrollingLeft = currentScroll < lastScrollLeft;
 
-function startCarousel() {
-  // Clone all original slides for seamless loop
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    track.appendChild(clone);
-  });
-
-  // Calculate the width of the original slides
-  function getSingleLoopWidth() {
-    let width = 0;
-    for (let i = 0; i < originalSlidesCount; i++) {
-      width += track.children[i].getBoundingClientRect().width;
-    }
-    return width;
+  // If near the right edge, clone more to the right
+  if (scrollingRight && currentScroll > maxScroll - 300) {
+    cloneImages("right");
   }
 
-  let scrollPos = 0;
-  function animateScroll() {
-    scrollPos += speed;
-    const singleLoopWidth = getSingleLoopWidth();
-    if (scrollPos >= singleLoopWidth) {
-      scrollPos -= singleLoopWidth;
-    }
-    track.scrollLeft = scrollPos;
-    requestAnimationFrame(animateScroll);
+  // If near the left edge, clone more to the left
+  if (scrollingLeft && currentScroll < 300) {
+    cloneImages("left");
+    track.scrollLeft += originals.length * 300; // adjust scroll to stay centered
   }
 
-  requestAnimationFrame(animateScroll);
-}
-
-// Check if all images are loaded
-images.forEach(img => {
-  if (img.complete) {
-    loaded++;
-  } else {
-    img.onload = () => {
-      loaded++;
-      if (loaded === images.length) {
-        startCarousel();
-      }
-    };
-  }
+  lastScrollLeft = currentScroll;
 });
-if (loaded === images.length) {
-  startCarousel();
+
+function cloneImages(direction) {
+  const originals = Array.from(track.querySelectorAll(".carousel-slide"));
+  originals.forEach(img => {
+    const clone = img.cloneNode(true);
+    if (direction === "right") {
+      track.appendChild(clone);
+    } else {
+      track.insertBefore(clone, track.firstChild);
+    }
+  });
 }
-// ...existing code...
+
 </script>
     <section id="contact">
       <h2 class="heading">contact</h2>
@@ -603,7 +602,21 @@ if (loaded === images.length) {
       </a>
     </section>
 
-      
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  function checkVisibility() {
+    animatedElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility();
+});
+</script>
 
     </body>
 </html>
