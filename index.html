@@ -19,33 +19,33 @@
         font-style: normal;
       }
       .navbar {
-  background-color: #d1b69c;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+        background-color: #d1b69c;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+      }
 
-.navbar a {
-  text-decoration: none;
-  font-family: "Gloria Hallelujah", cursive;
-  color: #fffaf0;
-  font-size: 18px;
-  transition: color 0.3s;
-}
+      .navbar a {
+        text-decoration: none;
+        font-family: "Gloria Hallelujah", cursive;
+        color: #fffaf0;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
 
-.navbar a:hover {
-  color: #ffebcd;
-}
+      .navbar a:hover {
+        color: #ffebcd;
+      }
 
       body {
         background-color: #fffcf5;
@@ -160,7 +160,7 @@
         text-decoration: underline;
         text-decoration-style: wavy;
       }
-    .woody {
+      .woody {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -204,8 +204,9 @@
       } 
 
       .timeline-content a {
-  color: #fff !important;
-}
+        color: #fff !important;
+      }
+
       .timeline-heading {
         font-family: "Gloria Hallelujah", cursive;
         font-size: 30px;
@@ -273,19 +274,20 @@
 
       .timeline-photo {
         max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
-  cursor: pointer;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
+        cursor: pointer;
       }
 
       .timeline-photo:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  z-index: 2;
-}
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        z-index: 2;
+      }
+
       #gallery {
         background-color: #4A3931;
         width: 100%;
@@ -295,33 +297,35 @@
       }
       
       #gallery,
-.infinite-carousel,
-.carousel-container,
-.carousel-wrapper {
-  width: 100%;
-  box-sizing: border-box;
-}
+      .infinite-carousel,
+      .carousel-container,
+      .carousel-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+      }
 
       #gallery .heading {
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 30px;
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  position: sticky;
-}
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: 30px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        position: sticky;
+      }
 
-.carousel-wrapper {
-  position: relative;
-  width: 100vw;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
+      .carousel-wrapper {
+        position: relative;
+        width: 100vw;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .carousel-track::-webkit-scrollbar {
+        display: none;
+      }
+
       .carousel-container {
         width: 100vw;
         overflow-x: auto;
@@ -337,103 +341,98 @@
       
       .carousel-track {
         display: flex;
-  width: max-content;
-  gap: 40px;
-  padding: 20px;
-  -webkit-overflow-scrolling: touch;
-  height: 320px;
+        width: max-content;
+        gap: 40px;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
+        height: 320px;
       }
 
       .carousel-slide img {
-  max-width: 100%;
-  max-height: 500px;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+        max-width: 100%;
+        max-height: 500px;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
 
+      .carousel-track img,
+      .carousel-slide:hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
 
-     .carousel-track img,
-.carousel-slide:hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+      .carousel-track img:hover,
+      .carousel-slide:hover img {
+        transform: scale(1.08);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      }
 
-.carousel-track img:hover,
-.carousel-slide:hover img {
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
       .carousel-slide {
         flex: 0 0 auto;
       }
 
-  .contact-section {
-  background-color: #ccad9f;
-  text-align: center;
-  padding: 60px 20px;
-  font-family: "Gaegu", sans-serif;
-  color: #fffaf0;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-}
+      .contact-section {
+        background-color: #ccad9f;
+        text-align: center;
+        padding: 60px 20px;
+        font-family: "Gaegu", sans-serif;
+        color: #fffaf0;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+      }
 
+      .contact-heading {
+        color: #ffffff;
+        text-decoration: underline wavy;
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+      }
 
-.contact-heading {
-  color: #ffffff;
-  text-decoration: underline wavy;
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-}
+      .contact-text {
+        font-size: 25px;
+        margin-bottom: 25px;
+        font-family: "Gaegu", sans-serif;
+        text-align: center;
+        font-size: 25px
+      }
 
-.contact-text {
-  font-size: 25px;
-  margin-bottom: 25px;
-  font-family: "Gaegu", sans-serif;
-  text-align: center;
-  font-size: 25px
-}
+      .insta-button {
+        display: inline-flex;
+        align-items: center;
+        font-size: 18px;
+        font-family: "Gaegu", sans-serif;
+        background-color: #fffaf0;
+        color: #b87333;
+        padding: 10px 15px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        margin: 0 auto;           /* center horizontally */
+        display: flex;            /* ensure flex for centering */
+        justify-content: center; 
+      }
 
-.insta-button {
-  display: inline-flex;
-  align-items: center;
-  font-size: 18px;
-  font-family: "Gaegu", sans-serif;
-  background-color: #fffaf0;
-  color: #b87333;
-  padding: 10px 15px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  margin: 0 auto;           /* center horizontally */
-  display: flex;            /* ensure flex for centering */
-  justify-content: center; 
-}
+      .insta-button:hover {
+        background-color: #f2e4d8;
+      }
 
-.insta-button:hover {
-  background-color: #f2e4d8;
-}
-
-.insta-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-
-      
-
+      .insta-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
 
     </style>
   </head>
@@ -448,6 +447,7 @@
             <li><a href="#contact">contact</a></li>
         </ul>
     </nav>
+
     <div class= "heading">
       <h1>coffee and woody</h1>
       </div>
@@ -459,6 +459,7 @@
         </div>
       </div>
     </section>
+
     <section id="coffee" class="coffee">
   <div class="coffee-text">
     <div class="coffee-text-heading">
@@ -474,7 +475,8 @@
     <img src="https://live.staticflickr.com/65535/54665244698_f3d7d7871e_b.jpg">
   </div>
 </section>
-    <section id="woody" class="woody">
+
+  <section id="woody" class="woody">
   <div class="woody-text">
     <div class="woody-text-heading">
        <h1><strong>woody</strong></h1>
@@ -488,135 +490,155 @@
     <img src="https://live.staticflickr.com/65535/54665245143_9e88334a99_b.jpg">
   </div>
 </section>
-    <section id="mementos" class="timeline-section">
-      <h1 class="timeline-heading">mementos</h1>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class=""timeline-item animate-on-scroll>
+
+  <section id="mementos" class="timeline-section">
+    <h1 class="timeline-heading">mementos</h1>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class=""timeline-item animate-on-scroll>
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>february 4, 2021</h3>
-            <p>🐾brought coffee home -- her first nap in her new bed </p>
-            <img src="https://live.staticflickr.com/65535/54664234137_1494b112d6_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            <div class="timeline-content">
+              <h3>february 4, 2021</h3>
+              <p>🐾brought coffee home -- her first nap in her new bed </p>
+              <img src="https://live.staticflickr.com/65535/54664234137_1494b112d6_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            </div>
           </div>
         </div>
-        </div>
-        <div class="timeline-item">
-          <div class=""timeline-item animate-on-scroll>
+      </div>
+
+      <div class="timeline-item">
+        <div class=""timeline-item animate-on-scroll>
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>february 12, 2021</h3>
-            <p>🧧coffee's first cny with her new family </p>
-            <img src="https://live.staticflickr.com/65535/54665393750_9a37e856b9_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
-          </div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class=""timeline-item animate-on-scroll>
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>july 7, 2021</h3>
-            <p>🏠woody joined the family, but became instant rivals with coffee</p>
-            <img src="https://live.staticflickr.com/65535/54665303214_eaebb9ddc0_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
-          </div>
+            <div class="timeline-content">
+              <h3>february 12, 2021</h3>
+              <p>🧧coffee's first cny with her new family </p>
+              <img src="https://live.staticflickr.com/65535/54665393750_9a37e856b9_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class=""timeline-item animate-on-scroll>
+      </div>
+
+      <div class="timeline-item">
+        <div class=""timeline-item animate-on-scroll>
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>july 21, 2021</h3>
-            <p>🧸woody's first proper 'playtime' with coffee </p>
-            <img src="https://live.staticflickr.com/65535/54665394705_af8dafdc87_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
-          </div>
+            <div class="timeline-content">
+              <h3>july 7, 2021</h3>
+              <p>🏠woody joined the family, but became instant rivals with coffee</p>
+              <img src="https://live.staticflickr.com/65535/54665303214_eaebb9ddc0_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class=""timeline-item animate-on-scroll>
+      </div>
+
+      <div class="timeline-item">
+        <div class=""timeline-item animate-on-scroll>
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>april 2023</h3>
-            <p>🩺became the cover of <a href="https://www.fmshk.org/database/hkmd/mdapr2023.pdf" target="_blank">the hong kong medical diary - endocrinology</a></p>
-            <img src="https://live.staticflickr.com/65535/54665297333_3524baf461_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            <div class="timeline-content">
+              <h3>july 21, 2021</h3>
+              <p>🧸woody's first proper 'playtime' with coffee </p>
+              <img src="https://live.staticflickr.com/65535/54665394705_af8dafdc87_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class=""timeline-item animate-on-scroll>
+          <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>april 2023</h3>
+              <p>🩺became the cover of <a href="https://www.fmshk.org/database/hkmd/mdapr2023.pdf" target="_blank">the hong kong medical diary - endocrinology</a></p>
+              <img src="https://live.staticflickr.com/65535/54665297333_3524baf461_b.jpg" alt="coffee's first nap in her new bed" class="timeline-photo"> 
+            </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+   </section>
+     
   <section id="gallery" class="infinite-carousel">
-  <h1 class="heading">gallery</h1>   
-  <div class="carousel-wrapper">
-  <div class="carousel-track">
-    <img src="https://live.staticflickr.com/65535/54665349884_88c49f5b2a_b.jpg" alt="photoshoot" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54664288047_5ff162079b_b.jpg" alt="coffee's 4th birthday'" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54665112636_f861c54c2d_b.jpg" alt="woody's 4th birthday" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54665117506_68e852eb2c_b.jpg" alt="woody photoshoot" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54665349553_b4f0ce7327_b.jpg" alt="coffee photoshoot" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54665351768_ea0962a5f5_b.jpg" alt=" woody photoshoot" class="carousel-slide">
-    <img src="https://live.staticflickr.com/65535/54665351538_f6d47d653c_b.jpg" alt="coffee photoshoot" class="carousel-slide">
-  </div>
-  </div>
-</section>
-<script>
+    <h1 class="heading">gallery</h1>   
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <img src="https://live.staticflickr.com/65535/54665349884_88c49f5b2a_b.jpg" alt="photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54664288047_5ff162079b_b.jpg" alt="coffee's 4th birthday'" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665112636_f861c54c2d_b.jpg" alt="woody's 4th birthday" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665117506_68e852eb2c_b.jpg" alt="woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665808292_e56f1d32eb_b.jpg" alt="woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665349553_b4f0ce7327_b.jpg" alt="coffee photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54666876728_7b559b6fda_b.jpg" alt="woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665809492_f73d5fbfb2_b.jpg" alt=" woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54666966780_3919754190_b.jpg" alt="woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54666638521_73ab4eed11_b.jpg" alt="coffee photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54666869808_cd771cf935_b.jpg" alt="woody photoshoot" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665345273_a5415c5429_b.jpg" alt="coffee pawfessor" class="carousel-slide">
+          <img src="https://live.staticflickr.com/65535/54665351538_f6d47d653c_b.jpg" alt="coffee photoshoot" class="carousel-slide">
+        </div>
+      </div>
+  </section>
+  <script>
     const track = document.querySelector(".carousel-track");
-let lastScrollLeft = track.scrollLeft;
+      let lastScrollLeft = track.scrollLeft;
 
-track.addEventListener("scroll", () => {
-  const currentScroll = track.scrollLeft;
-  const maxScroll = track.scrollWidth - track.clientWidth;
+    track.addEventListener("scroll", () => {
+    const currentScroll = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth;
 
-  // Scroll direction
-  const scrollingRight = currentScroll > lastScrollLeft;
-  const scrollingLeft = currentScroll < lastScrollLeft;
+    // Scroll direction
+    const scrollingRight = currentScroll > lastScrollLeft;
+    const scrollingLeft = currentScroll < lastScrollLeft;
 
-  // If near the right edge, clone more to the right
-  if (scrollingRight && currentScroll > maxScroll - 300) {
+    // If near the right edge, clone more to the right
+    if (scrollingRight && currentScroll > maxScroll - 300) {
     cloneImages("right");
-  }
+    }
 
-  // If near the left edge, clone more to the left
-  if (scrollingLeft && currentScroll < 300) {
+    // If near the left edge, clone more to the left
+    if (scrollingLeft && currentScroll < 300) {
     cloneImages("left");
     track.scrollLeft += originals.length * 300; // adjust scroll to stay centered
-  }
-
-  lastScrollLeft = currentScroll;
-});
-
-function cloneImages(direction) {
-  const originals = Array.from(track.querySelectorAll(".carousel-slide"));
-  originals.forEach(img => {
-    const clone = img.cloneNode(true);
-    if (direction === "right") {
-      track.appendChild(clone);
-    } else {
-      track.insertBefore(clone, track.firstChild);
     }
-  });
-}
 
-</script>
-    <section id="contact">
-      <h2 class="heading">contact</h2>
-      <p class="contact-text">follow coffee & woody's adventures on instagram! 🧸📸</p>
-      <a href="https://www.instagram.com/coffee_n_woody/" target="_blank" class="insta-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" class="insta-icon">
-    @coffeeandwoody
-      </a>
-    </section>
+    lastScrollLeft = currentScroll;
+    });
 
-      <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
-  function checkVisibility() {
-    animatedElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add('visible');
+    function cloneImages(direction) {
+    const originals = Array.from(track.querySelectorAll(".carousel-slide"));
+    originals.forEach(img => {
+    const clone = img.cloneNode(true);
+      if (direction === "right") {
+        track.appendChild(clone);
+      } else {
+        track.insertBefore(clone, track.firstChild);
       }
     });
   }
-  window.addEventListener('scroll', checkVisibility);
-  checkVisibility();
-});
+  </script>
+
+  <section id="contact">
+    <h2 class="heading">contact</h2>
+    <p class="contact-text">follow coffee & woody's adventures on instagram! 🧸📸</p>
+    <a href="https://www.instagram.com/coffee_n_woody/" target="_blank" class="insta-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" class="insta-icon">
+    @coffeeandwoody
+    </a>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    function checkVisibility() {
+      animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+  });
 </script>
 
     </body>
